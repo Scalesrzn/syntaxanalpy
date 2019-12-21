@@ -64,6 +64,8 @@ class TableOfEnding(object):
     Ending13 = ['ы', 'е']
     Ending14 = ['е', 'т']
 
+
+
 class TableOfMorfInformation(object):
     Number0_1 = "Морфологическая информация - Существительное, муж. род, неодуш., 2 склонение, именительный падеж, ед. число"
     Number1_1 = "Морфологическая информация - Существительное, муж. род, неодуш., 2 склонение, родительный падеж, ед. число"
@@ -89,6 +91,26 @@ class TableOfMorfInformation(object):
     Number0_12 = "Морфологическая информация - Наречие цели"
     Number0_13 = "Морфологическая информация - Аббревиатура, тип манометра"
     Number1_8 = "Морфологическая информация - Прилагательное, краткое, ед. число, жен.род"
+##VGRADOV
+class Question(object):
+    Que1 = ['Здравствуйте','Привет', 'здравствуйте', 'привет']
+    Que2 = ['сколько','стоит', 'цена', 'цену'] 
+    Que3 = ['абонемент']
+##VGRADOV
+class Answer(object):
+    Ans1 = "Повторите вопрос"
+    Ans2 = "Здравствуйте"
+    Ans3 = "До свидания!"
+    Ans4 = 'это стоит'
+
+    Sale1 = 'лям доллАров'
+
+##VGRADOV
+class Member(object):
+    Mem1 = "Подлежащее"
+    Mem2 = "Сказуемое"
+    Mem3 = "Прилагательное"
+
 
 def get_numberOfFlekClass(base): #Возвращает номер флективного класса
     if base in FlekClasses.FlekClass1:
@@ -210,6 +232,10 @@ def get_MorfInf(numberOfEnd, numberOfFlekClass, morfInf):
 
     return morfInf
 
+##VGRADOV
+def answer(word):
+    print('lol')
+answered = []
 question = input("Введите Ваш вопрос: ")
 question = question.lower()
 wordsOfQuestion = question.replace('?', ' ').split() #вопрос разбит по словам
@@ -321,3 +347,14 @@ for i in range(lengthOfQuestion):
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  у слова "', wordsOfQuestion[i], '" окончание нулевое')
         numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
         morfInf = get_MorfInf(0, numberOfFlekClass, ' ')
+
+    ##VGRADOV 20191221
+    if wordsOfQuestion[i] in Question.Que1: # если введенное слово содержится в списке 
+        answered.append(Answer.Ans2)
+    elif wordsOfQuestion[i] in Question.Que2:
+        answered.append(Answer.Ans4)
+    elif wordsOfQuestion[i] in Question.Que3:
+        answered.append(Answer.Sale1)
+message = ' '.join(answered)
+print(message)
+
