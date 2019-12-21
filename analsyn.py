@@ -350,11 +350,11 @@ for i in range(lengthOfQuestion):
 
     ##VGRADOV 20191221
     if wordsOfQuestion[i] in Question.Que1: # если введенное слово содержится в списке 
-        answered.append(Answer.Ans2)
+        answered.append(Answer.Ans2)#то добавляем в массив часть ответа
     elif wordsOfQuestion[i] in Question.Que2:
         answered.append(Answer.Ans4)
     elif wordsOfQuestion[i] in Question.Que3:
         answered.append(Answer.Sale1)
-message = ' '.join(answered)
-print(message)
+message = ' '.join(answered)#массив соединяем в строку
+print(message)#выводим
 
