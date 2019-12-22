@@ -156,77 +156,77 @@ def get_numberOfFlekClass(base): #Возвращает номер флектив
         #print("Номер флективного класса - ", base)
     return base
 
-def get_MorfInf(numberOfEnd, numberOfFlekClass, morfInf):
-    if numberOfEnd == 0 and numberOfFlekClass == 1:
+def get_MorfInf(numberOfEnd, morfInf):
+    if numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_1
         print(morfInf)
-    elif numberOfEnd == 1 and numberOfFlekClass == 1:
+    elif numberOfEnd == 1:
         morfInf = TableOfMorfInformation.Number1_1
         print(morfInf)
-    elif numberOfEnd == 4 and numberOfFlekClass == 1:
+    elif numberOfEnd == 4:
         morfInf = TableOfMorfInformation.Number4_1
         print(morfInf)
-    elif numberOfEnd == 5 and numberOfFlekClass == 1:
+    elif numberOfEnd == 5:
         morfInf = TableOfMorfInformation.Number5_1
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 2:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_2
         print(morfInf)
-    elif numberOfEnd == 3 and numberOfFlekClass == 2:
+    elif numberOfEnd == 3:
         morfInf = TableOfMorfInformation.Number3_2
         print(morfInf)
-    elif numberOfEnd == 1 and numberOfFlekClass == 3:
+    elif numberOfEnd == 1:
         morfInf = TableOfMorfInformation.Number1_3
         print(morfInf)
-    elif numberOfEnd == 4 and numberOfFlekClass == 3:
+    elif numberOfEnd == 4:
         morfInf = TableOfMorfInformation.Number4_3
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 4:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_4
         print(morfInf)
-    elif numberOfEnd == 7 and numberOfFlekClass == 4:
+    elif numberOfEnd == 7:
         morfInf = TableOfMorfInformation.Number7_4
         print(morfInf)
-    elif numberOfEnd == 8 and numberOfFlekClass == 5:
+    elif numberOfEnd == 8:
         morfInf = TableOfMorfInformation.Number8_5
         print(morfInf)
-    elif numberOfEnd == 6 and numberOfFlekClass == 5:
+    elif numberOfEnd == 6:
         morfInf = TableOfMorfInformation.Number6_5
         print(morfInf)
-    elif numberOfEnd == 10 and numberOfFlekClass == 5:
+    elif numberOfEnd == 10:
         morfInf = TableOfMorfInformation.Number10_5
         print(morfInf)
-    elif numberOfEnd == 10 and numberOfFlekClass == 6:
+    elif numberOfEnd == 10:
         morfInf = TableOfMorfInformation.Number10_6
         print(morfInf)
-    elif numberOfEnd == 12 and numberOfFlekClass == 6:
+    elif numberOfEnd == 12:
         morfInf = TableOfMorfInformation.Number12_6
         print(morfInf)
-    elif numberOfEnd == 13 and numberOfFlekClass == 6:
+    elif numberOfEnd == 13:
         morfInf = TableOfMorfInformation.Number13_6
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 7:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_7
         print(morfInf)
-    elif numberOfEnd == 1 and numberOfFlekClass == 8:
+    elif numberOfEnd == 1:
         morfInf = TableOfMorfInformation.Number1_8
         print(morfInf)
-    elif numberOfEnd == 11 and numberOfFlekClass == 9:
+    elif numberOfEnd == 11:
         morfInf = TableOfMorfInformation.Number11_9
         print(morfInf)
-    elif numberOfEnd == 14 and numberOfFlekClass == 9:
+    elif numberOfEnd == 14:
         morfInf = TableOfMorfInformation.Number14_9
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 10:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_10
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 11:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_11
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 12:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_12
         print(morfInf)
-    elif numberOfEnd == 0 and numberOfFlekClass == 13:
+    elif numberOfEnd == 0:
         morfInf = TableOfMorfInformation.Number0_13
         print(morfInf)
 
@@ -255,98 +255,98 @@ for i in range(lengthOfQuestion):
         baseOfWord = baseOfWord[:-1]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "а" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(1, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(1, ' ')
     elif TableOfEnding.Ending3[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending3[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 3
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ем" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending4[0] == baseOfWord[lengthOfWord - 1]:
         numberOfEnd = 4
         baseOfWord = baseOfWord[:-1]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ы" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending5[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending5[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 5
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ов" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending6[0] == baseOfWord[lengthOfWord - 1]:
         numberOfEnd = 6
         baseOfWord = baseOfWord[:-1]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "я" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending7[0] == baseOfWord[lengthOfWord - 1]:
         numberOfEnd = 7
         baseOfWord = baseOfWord[:-1]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "и" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending8[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending8[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 8
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ие" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending9[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending9[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 9
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ия" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending10[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending10[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 10
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ий" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending11[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending11[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 11
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ит" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(numberOfEnd, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(numberOfEnd, ' ')
     elif TableOfEnding.Ending12[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending12[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 12
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ый" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(12, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(12, ' ')
     elif TableOfEnding.Ending13[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending13[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 13
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ые" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(13, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(13, ' ')
     elif TableOfEnding.Ending14[1] == baseOfWord[lengthOfWord - 1] and TableOfEnding.Ending14[0] == baseOfWord[lengthOfWord - 2]:
         numberOfEnd = 14
         baseOfWord = baseOfWord[:-2]
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  окончание слова "', wordsOfQuestion[i], '" - "ет" ')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(14, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(14, ' ')
     else:
         numberOfEnd = 0
         baseOfWord = ''.join(baseOfWord)
         print('основа слова "', wordsOfQuestion[i], '" - ', baseOfWord, ';  у слова "', wordsOfQuestion[i], '" окончание нулевое')
-        numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
-        morfInf = get_MorfInf(0, numberOfFlekClass, ' ')
+        # numberOfFlekClass = get_numberOfFlekClass(baseOfWord)
+        morfInf = get_MorfInf(0, ' ')
 
     ##VGRADOV 20191221
     if wordsOfQuestion[i] in Question.Que1: # если введенное слово содержится в списке 
